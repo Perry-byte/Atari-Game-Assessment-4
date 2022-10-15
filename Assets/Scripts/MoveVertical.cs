@@ -15,11 +15,11 @@ public class MoveVertical : MonoBehaviour
         pos = gameObject.transform.position;
         if (pos.x > 0)
         {
-            direction = new Vector3(0, -0.10f, 0);
+            direction = new Vector3(0, -0.15f, 0);
         }
         else
         {
-            direction = new Vector3(0, 0.10f, 0);
+            direction = new Vector3(0, 0.15f, 0);
         }
     }
 
@@ -31,13 +31,13 @@ public class MoveVertical : MonoBehaviour
         if (count == 50)
         {
             count = 0;
-            if (direction == new Vector3(0, -0.10f, 0))
+            if (direction == new Vector3(0, -0.15f, 0))
             {
-                direction = new Vector3(0, 0.10f, 0);
+                direction = new Vector3(0, 0.15f, 0);
             }
             else
             {
-                direction = new Vector3(0, -0.10f, 0);
+                direction = new Vector3(0, -0.15f, 0);
             }
         }
     }
