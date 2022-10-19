@@ -11185,6 +11185,8 @@ GameObject:
   - component: {fileID: 240123250}
   - component: {fileID: 240123249}
   - component: {fileID: 240123248}
+  - component: {fileID: 240123252}
+  - component: {fileID: 240123251}
   m_Layer: 0
   m_Name: Roller (Pacstudent)
   m_TagString: Untagged
@@ -11272,13 +11274,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240123247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6899, y: 5.2, z: 0.69}
+  m_LocalPosition: {x: -3.68, y: 5.216, z: 2.68}
   m_LocalScale: {x: 0.4480824, y: 0.4480824, z: 0.4480824}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240123251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240123247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddd5b1be0621034ebd16bd7b710131b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240123252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240123247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc86b794517e244b90df31b485a910e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweener: {fileID: 240123251}
 --- !u!1 &243158244
 GameObject:
   m_ObjectHideFlags: 0
