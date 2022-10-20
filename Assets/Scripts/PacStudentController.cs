@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PacStudentController : MonoBehaviour
 {
-    Vector3 lastInput = new Vector3(0.0f,0.0f,0.0f);
-    Vector3 currentInput = new Vector3(0.0f, 0.0f, 0.0f);
+    Vector3 lastInput;
+    Vector3 currentInput;
     [SerializeField]
     Tweener tweener;
     // Start is called before the first frame update
     void Start()
     {
-        
+        lastInput = gameObject.transform.position;
+        currentInput = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -19,58 +20,60 @@ public class PacStudentController : MonoBehaviour
     {
         if (Input.GetKeyDown("a"))
         {
-            currentInput = gameObject.transform.position + new Vector3(-0.36f, 0.0f, 0.0f);
-            if (checkCollision(currentInput))
+            currentInput = new Vector3(-0.36f, 0.0f, 0.0f);
+            if (checkCollision(gameObject.transform.position + currentInput))
             {
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
             }
             lastInput = currentInput;
         }
         else if (Input.GetKeyDown("d"))
         {
-            currentInput = gameObject.transform.position + new Vector3(0.36f, 0.0f, 0.0f);
-            if (checkCollision(currentInput))
+            currentInput = new Vector3(0.36f, 0.0f, 0.0f);
+            if (checkCollision(gameObject.transform.position + currentInput))
             {
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
+                Debug.Log("go");
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
             }
             lastInput = currentInput;
         }
         else if (Input.GetKeyDown("w"))
         {
-            currentInput = gameObject.transform.position + new Vector3(0.0f, 0.36f, 0.0f);
-            if (checkCollision(currentInput))
+            currentInput = new Vector3(0.0f, 0.36f, 0.0f);
+            if (checkCollision(gameObject.transform.position + currentInput))
             {
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
             }
             lastInput = currentInput;
         }
         else if (Input.GetKeyDown("s"))
         {
-            currentInput = gameObject.transform.position + new Vector3(0.0f, -0.36f, 0.0f);
-            if (checkCollision(currentInput))
+            currentInput = new Vector3(0.0f, -0.36f, 0.0f);
+            if (checkCollision(gameObject.transform.position + currentInput))
             {
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
             }
             lastInput = currentInput;
         }
-        else if (checkCollision(lastInput)) {
-            tweener.AddTween(gameObject.transform, gameObject.transform.position, lastInput, 0.5f);
+        if (!checkCollision(gameObject.transform.position + lastInput)) {
+            Debug.Log("Auto");
+            tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
         }
     }
 
@@ -97,19 +100,19 @@ public class PacStudentController : MonoBehaviour
         {
             return true;
         }
-        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.5 && move.x < -0.4) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.5 && move.x < 0.342) || (move.y > 0.47 && move.y < 3.55 && move.x > 2.85 && move.x < 3.83) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.68 && move.x < 3.83)) // Top Side T
+        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.35 && move.x < -1.04) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.35 && move.x < 0.32) || (move.y > 0.47 && move.y < 3.55 && move.x > 3.2 && move.x < 3.54) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.9 && move.x < 3.54)) // Top Side T
         {
             return true;
         }
-        if ((move.y > -3.63 && move.y < -0.34 && move.x > -1.5 && move.x < -0.4) || (move.y > -2.416 && move.y < -1.423 && move.x > -1.5 && move.x < 0.342) || (move.y > -3.63 && move.y < -0.34 && move.x > 2.85 && move.x < 3.83) || (move.y > -2.416 && move.y < -1.423 && move.x > 1.68 && move.x < 3.83)) // Bottom Side T
+        if ((move.y > -3.63 && move.y < -0.34 && move.x > -1.35 && move.x < -1.04) || (move.y > -2.04 && move.y < -1.76 && move.x > -1.35 && move.x < 0.32) || (move.y > -3.63 && move.y < -0.34 && move.x > 3.2 && move.x < 3.54) || (move.y > -2.04 && move.y < -1.76 && move.x > 1.9 && move.x < 3.54)) // Bottom Side T
         {
             return true;
         }
-        if ((move.y > 2.73 && move.y < 3.51 && move.x > -0.44 && move.x < 2.57) || (move.y > 1.66 && move.y < 3.51 && move.x > 0.76 && move.x < 1.41)) // Top T
+        if ((move.y > 2.73 && move.y < 3.51 && move.x > -0.3 && move.x < 2.5) || (move.y > 1.66 && move.y < 3.51 && move.x > 0.76 && move.x < 1.41)) // Top T
         {
             return true;
         }
-        if ((move.y > -3.41 && move.y < -2.76 && move.x > -0.44 && move.x < 2.57) || (move.y > -3.41 && move.y < -1.58 && move.x > 0.76 && move.x < 1.41)) // Bottom T
+        if ((move.y > -3.41 && move.y < -2.76 && move.x > -0.3 && move.x < 2.5) || (move.y > -3.41 && move.y < -1.61 && move.x > 0.76 && move.x < 1.41)) // Bottom T
         {
             return true;
         }

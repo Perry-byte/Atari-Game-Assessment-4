@@ -22,7 +22,7 @@ public class Tweener : MonoBehaviour
             }
             else
             {
-                Debug.Log("5");
+                //Debug.Log("5");
                 activeTween.Target.position = activeTween.EndPos;
                 activeTween = null;
             }
@@ -33,7 +33,7 @@ public class Tweener : MonoBehaviour
     {
         if (activeTween == null)
         {
-            Debug.Log("1");
+            //Debug.Log("1");
             activeTween = new Tween(targetObject, startPos, endPos, Time.time, duration);
         }
     }
