@@ -79,7 +79,7 @@ public class PacStudentController : MonoBehaviour
         {
             return true;
         }
-        if ((move.y < 3.5 && move.y > 2.75 && move.x > -3.4 && move.x < -2.1) || (move.y < 2.5 && move.y > 0.67 && move.x > -3.77 && move.x < -2.1))
+        if ((move.y < 3.5 && move.y > 2.75 && move.x > -3.4 && move.x < -2.1) || (move.y < 2.5 && move.y > 0.67 && move.x > -3.77 && move.x < -2.1) || (move.y < 3.47 && move.y > 0.63 && move.x > -1.71 && move.x < -0.78) || (move.y < 2.6 && move.y > 1.54 && move.x > -0.78 && move.x < 0.19))
         {
             return true;
         }
