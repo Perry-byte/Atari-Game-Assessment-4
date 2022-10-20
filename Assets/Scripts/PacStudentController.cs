@@ -26,9 +26,9 @@ public class PacStudentController : MonoBehaviour
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + new Vector3(-0.36f, 0.0f, 0.0f), 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
             }
-            lastInput = gameObject.transform.position + new Vector3(-0.36f, 0.0f, 0.0f);
+            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("d"))
         {
@@ -39,9 +39,9 @@ public class PacStudentController : MonoBehaviour
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + new Vector3(0.36f, 0.0f, 0.0f), 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
             }
-            lastInput = gameObject.transform.position + new Vector3(0.36f, 0.0f, 0.0f);
+            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("w"))
         {
@@ -52,9 +52,9 @@ public class PacStudentController : MonoBehaviour
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + new Vector3(0.0f, 0.36f, 0.0f), 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
             }
-            lastInput = gameObject.transform.position + new Vector3(0.0f, 0.36f, 0.0f);
+            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("s"))
         {
@@ -65,12 +65,12 @@ public class PacStudentController : MonoBehaviour
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + new Vector3(0.0f, -0.36f, 0.0f), 0.5f);
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, currentInput, 0.5f);
             }
-            lastInput = gameObject.transform.position + new Vector3(0.0f, -0.36f, 0.0f);
+            lastInput = currentInput;
         }
-        else if (checkCollision(lastInput)) { 
-            
+        else if (checkCollision(lastInput)) {
+            tweener.AddTween(gameObject.transform, gameObject.transform.position, lastInput, 0.5f);
         }
     }
 
@@ -142,6 +142,10 @@ public class PacStudentController : MonoBehaviour
             return true;
         }
         if (move.x > -0.23 && move.x < 2.42 && move.y > -0.99 && move.y < 1.13) // Center Box
+        {
+            return true;
+        }
+        if (move.y > 5.45 || move.x > 6.31 || move.y < -5.59 || move.x < -4.04) // Boundary
         {
             return true;
         }
