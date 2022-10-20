@@ -79,7 +79,15 @@ public class PacStudentController : MonoBehaviour
         {
             return true;
         }
-        if ((move.y < 3.5 && move.y > 2.75 && move.x > -3.4 && move.x < -2.1) || (move.y < 2.5 && move.y > 0.67 && move.x > -3.77 && move.x < -2.1) || (move.y < 3.47 && move.y > 0.63 && move.x > -1.71 && move.x < -0.78) || (move.y < 2.6 && move.y > 1.54 && move.x > -0.78 && move.x < 0.19))
+        if ((move.y < 3.5 && move.y > 2.75 && move.x > -3.4 && move.x < -2.1) || (move.y < 2.5 && move.y > 0.67 && move.x > -3.77 && move.x < -2.1) || (move.y < 3.47 && move.y > 0.63 && move.x > -1.71 && move.x < -0.78) || (move.y < 2.6 && move.y > 1.64 && move.x > -0.78 && move.x < 0.19) || (move.y > 3.9 && move.x > 0.6 && move.x < 1.5))
+        {
+            return true;
+        }
+        if ((move.y < 5 && move.y > 4 && move.x > 1.88 && move.x < 3.83) || (move.y < 5 && move.y > 4 && move.x > 4 && move.x < 5.64) || (move.x > 5.92 && move.y < 5.32 && move.y > 2.57) || (move.y < 3.43 && move.y > 2.84 && move.x > 4 && move.x < 5.64) || (move.y < 3.5 && move.y > 2.72 && move.x > -0.31 && move.x < 2.6) || (move.y < 2.89 && move.y > 1.65 && move.x > 0.67 && move.x < 1.55))
+        {
+            return true;
+        }
+        if ((move.y < 3.46 && move.y > 0.51 && move.x > 3.12 && move.x < 3.75) || (move.y < 2.44 && move.y > 1.57 && move.x > 1.92 && move.x < 3.85) || (move.y < 2.5 && move.y > 0.56 && move.x > 4.07 && move.x < 5.91))
         {
             return true;
         }
