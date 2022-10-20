@@ -75,7 +75,11 @@ public class PacStudentController : MonoBehaviour
     }
 
     bool checkCollision(Vector3 move) {
-        if (move.x < -3.75 || (move.x > -3.66 && move.x < -1.79 && move.y < 4.9 && move.y > 3.8))
+        if (move.x < -3.75 || (move.x > -3.4 && move.x < -1.9 && move.y < 5 && move.y > 4) || (move.y > 4 && move.y < 5 && move.x < 0.2 && move.x > -1.6))
+        {
+            return true;
+        }
+        if ((move.y < 3.5 && move.y > 2.75 && move.x > -3.4 && move.x < -2.1) || (move.y < 2.5 && move.y > 0.67 && move.x > -3.77 && move.x < -2.1))
         {
             return true;
         }
