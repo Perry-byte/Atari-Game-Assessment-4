@@ -91,6 +91,20 @@ public class PacStudentController : MonoBehaviour
         {
             return true;
         }
+
+
+        if ((move.y > -2.21 && move.y < -0.66 && move.x < -1.97) || (move.y > -2.21 && move.y < -0.66 && move.x > 4.28) || (move.y > 0.791 && move.y < 2.3 && move.x < -1.97) || (move.y > 0.791 && move.y < 2.3 && move.x > 4.28))
+        {
+            return true;
+        }
+        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.5 && move.x < -0.4) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.5 && move.x < 0.342) || (move.y > 0.47 && move.y < 3.55 && move.x > 2.85 && move.x < 3.83) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.68 && move.x < 3.83))
+        {
+            return true;
+        }
+        if ((move.y > -3.63 && move.y < -0.34 && move.x > -1.5 && move.x < -0.4) || (move.y > -2.416 && move.y < -1.423 && move.x > -1.5 && move.x < 0.342) || (move.y > -3.63 && move.y < -0.34 && move.x > 2.85 && move.x < 3.83) || (move.y > -2.416 && move.y < -1.423 && move.x > 1.68 && move.x < 3.83))
+        {
+            return true;
+        }
         return false;
     }
 }
