@@ -75,7 +75,7 @@ public class PacStudentController : MonoBehaviour
     }
 
     bool checkCollision(Vector3 move) {
-        if (move.x < -3.75 || (move.x > -3.4 && move.x < -1.9 && move.y < 5 && move.y > 4) || (move.y > 4 && move.y < 5 && move.x < 0.2 && move.x > -1.6))
+        /*if (move.x < -3.75 || (move.x > -3.4 && move.x < -1.9 && move.y < 5 && move.y > 4) || (move.y > 4 && move.y < 5 && move.x < 0.2 && move.x > -1.6))
         {
             return true;
         }
@@ -90,18 +90,42 @@ public class PacStudentController : MonoBehaviour
         if ((move.y < 3.46 && move.y > 0.51 && move.x > 3.12 && move.x < 3.75) || (move.y < 2.44 && move.y > 1.57 && move.x > 1.92 && move.x < 3.85) || (move.y < 2.5 && move.y > 0.56 && move.x > 4.07 && move.x < 5.91))
         {
             return true;
-        }
+        }*/
 
 
-        if ((move.y > -2.21 && move.y < -0.66 && move.x < -1.97) || (move.y > -2.21 && move.y < -0.66 && move.x > 4.28) || (move.y > 0.791 && move.y < 2.3 && move.x < -1.97) || (move.y > 0.791 && move.y < 2.3 && move.x > 4.28))
+        if ((move.y > -2.21 && move.y < -0.66 && move.x < -1.97) || (move.y > -2.21 && move.y < -0.66 && move.x > 4.28) || (move.y > 0.791 && move.y < 2.3 && move.x < -1.97) || (move.y > 0.791 && move.y < 2.3 && move.x > 4.28)) // Holes on Side
         {
             return true;
         }
-        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.5 && move.x < -0.4) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.5 && move.x < 0.342) || (move.y > 0.47 && move.y < 3.55 && move.x > 2.85 && move.x < 3.83) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.68 && move.x < 3.83))
+        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.5 && move.x < -0.4) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.5 && move.x < 0.342) || (move.y > 0.47 && move.y < 3.55 && move.x > 2.85 && move.x < 3.83) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.68 && move.x < 3.83)) // Top Side T
         {
             return true;
         }
-        if ((move.y > -3.63 && move.y < -0.34 && move.x > -1.5 && move.x < -0.4) || (move.y > -2.416 && move.y < -1.423 && move.x > -1.5 && move.x < 0.342) || (move.y > -3.63 && move.y < -0.34 && move.x > 2.85 && move.x < 3.83) || (move.y > -2.416 && move.y < -1.423 && move.x > 1.68 && move.x < 3.83))
+        if ((move.y > -3.63 && move.y < -0.34 && move.x > -1.5 && move.x < -0.4) || (move.y > -2.416 && move.y < -1.423 && move.x > -1.5 && move.x < 0.342) || (move.y > -3.63 && move.y < -0.34 && move.x > 2.85 && move.x < 3.83) || (move.y > -2.416 && move.y < -1.423 && move.x > 1.68 && move.x < 3.83)) // Bottom Side T
+        {
+            return true;
+        }
+        if ((move.y > 2.73 && move.y < 3.51 && move.x > -0.44 && move.x < 2.57) || (move.y > 1.66 && move.y < 3.51 && move.x > 0.76 && move.x < 1.41)) // Top T
+        {
+            return true;
+        }
+        if ((move.y > -3.41 && move.y < -2.76 && move.x > -0.44 && move.x < 2.57) || (move.y > -3.41 && move.y < -1.58 && move.x > 0.76 && move.x < 1.41)) // Bottom T
+        {
+            return true;
+        }
+        if ((move.y > -3.41 && move.y < -2.76 && move.x > -3.36 && move.x < -2.04) || (move.y > -3.41 && move.y < -2.76 && move.x > 4.24 && move.x < 5.6)) // Top Small Rect
+        {
+            return true;
+        }
+        if ((move.y > 2.76 && move.y < 3.3 && move.x > -3.36 && move.x < -2.04) || (move.y > 2.76 && move.y < 3.3 && move.x > 4.24 && move.x < 5.6)) // Bottom Small Rect
+        {
+            return true;
+        }
+        if ((move.y > 4.03 && move.y < 4.89 && move.x > -3.36 && move.x < -2.04) || (move.y > 4.03 && move.y < 4.89 && move.x > 4.24 && move.x < 5.6)) // Top Medium Rect
+        {
+            return true;
+        }
+        if ((move.y > -4.82 && move.y < -3.95 && move.x > -3.36 && move.x < -2.04) || (move.y > -4.82 && move.y < -3.95 && move.x > 4.24 && move.x < 5.6)) // Bottom Medium Rect
         {
             return true;
         }
