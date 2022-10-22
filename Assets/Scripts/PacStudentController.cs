@@ -26,7 +26,7 @@ public class PacStudentController : MonoBehaviour
             if (checkCollision(gameObject.transform.position + lastInput))
             {
                 moveMusic.Stop();
-                Debug.Log("stop");
+                //Debug.Log("stop");
             }
             else
             {
@@ -45,7 +45,7 @@ public class PacStudentController : MonoBehaviour
             if (checkCollision(gameObject.transform.position + lastInput))
             {
                 moveMusic.Stop();
-                Debug.Log("stop");
+                //Debug.Log("stop");
             }
             else
             {
@@ -64,7 +64,7 @@ public class PacStudentController : MonoBehaviour
             if (checkCollision(gameObject.transform.position + lastInput))
             {
                 moveMusic.Stop();
-                Debug.Log("stop");
+                //Debug.Log("stop");
             }
             else
             {
@@ -83,7 +83,7 @@ public class PacStudentController : MonoBehaviour
             if (checkCollision(gameObject.transform.position + lastInput))
             {
                 moveMusic.Stop();
-                Debug.Log("stop");
+                //Debug.Log("stop");
             }
             else
             {
@@ -99,7 +99,7 @@ public class PacStudentController : MonoBehaviour
         if (!checkCollision(gameObject.transform.position + lastInput))
         {
             currentInput = lastInput;
-            Debug.Log("Auto");
+            //Debug.Log("Auto");
             if (moveMusic.isPlaying == false)
             {
                 moveMusic.Play();
@@ -118,7 +118,7 @@ public class PacStudentController : MonoBehaviour
         } else
         {
             moveMusic.Stop();
-            Debug.Log("Stop");
+            //Debug.Log("Stop");
         }
     }
 
