@@ -11306,6 +11306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweener: {fileID: 240123251}
+  moveMusic: {fileID: 370100410}
 --- !u!1 &243158244
 GameObject:
   m_ObjectHideFlags: 0
@@ -15873,7 +15874,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -19139,7 +19140,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eb15dffba4a8d6c4ba443016b0f2b8a7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.158
   m_Pitch: 1
   Loop: 0
   Mute: 0

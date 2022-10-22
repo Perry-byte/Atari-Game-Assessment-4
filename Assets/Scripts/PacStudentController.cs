@@ -8,6 +8,8 @@ public class PacStudentController : MonoBehaviour
     Vector3 currentInput;
     [SerializeField]
     Tweener tweener;
+    [SerializeField]
+    AudioSource moveMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,60 +22,99 @@ public class PacStudentController : MonoBehaviour
     {
         if (Input.GetKeyDown("a"))
         {
-            currentInput = new Vector3(-0.36f, 0.0f, 0.0f);
-            if (checkCollision(gameObject.transform.position + currentInput))
+            lastInput = new Vector3(-0.36f, 0.0f, 0.0f);
+            if (checkCollision(gameObject.transform.position + lastInput))
             {
+                moveMusic.Stop();
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+                if (moveMusic.isPlaying == false)
+                {
+                    moveMusic.Play();
+                    moveMusic.loop = true;
+                }
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
-            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("d"))
         {
-            currentInput = new Vector3(0.36f, 0.0f, 0.0f);
-            if (checkCollision(gameObject.transform.position + currentInput))
+            lastInput = new Vector3(0.36f, 0.0f, 0.0f);
+            if (checkCollision(gameObject.transform.position + lastInput))
             {
+                moveMusic.Stop();
                 Debug.Log("stop");
             }
             else
             {
-                Debug.Log("go");
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+                if (moveMusic.isPlaying == false)
+                {
+                    moveMusic.Play();
+                    moveMusic.loop = true;
+                }
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
-            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("w"))
         {
-            currentInput = new Vector3(0.0f, 0.36f, 0.0f);
-            if (checkCollision(gameObject.transform.position + currentInput))
+            lastInput = new Vector3(0.0f, 0.36f, 0.0f);
+            if (checkCollision(gameObject.transform.position + lastInput))
             {
+                moveMusic.Stop();
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+                if (moveMusic.isPlaying == false)
+                {
+                    moveMusic.Play();
+                    moveMusic.loop = true;
+                }
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
-            lastInput = currentInput;
         }
         else if (Input.GetKeyDown("s"))
         {
-            currentInput = new Vector3(0.0f, -0.36f, 0.0f);
-            if (checkCollision(gameObject.transform.position + currentInput))
+            lastInput = new Vector3(0.0f, -0.36f, 0.0f);
+            if (checkCollision(gameObject.transform.position + lastInput))
             {
+                moveMusic.Stop();
                 Debug.Log("stop");
             }
             else
             {
-                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+                if (moveMusic.isPlaying == false)
+                {
+                    moveMusic.Play();
+                    moveMusic.loop = true;
+                }
+                tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
-            lastInput = currentInput;
         }
-        if (!checkCollision(gameObject.transform.position + lastInput)) {
+        if (!checkCollision(gameObject.transform.position + lastInput))
+        {
+            currentInput = lastInput;
             Debug.Log("Auto");
-            tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
+            if (moveMusic.isPlaying == false)
+            {
+                moveMusic.Play();
+                moveMusic.loop = true;
+            }
+            tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+        }
+        else if (!checkCollision(gameObject.transform.position + currentInput))
+        {
+            if (moveMusic.isPlaying == false)
+            {
+                moveMusic.Play();
+                moveMusic.loop = true;
+            }
+            tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + currentInput, 0.5f);
+        } else
+        {
+            moveMusic.Stop();
+            Debug.Log("Stop");
         }
     }
 
@@ -96,11 +137,11 @@ public class PacStudentController : MonoBehaviour
         }*/
 
 
-        if ((move.y > -2.21 && move.y < -0.66 && move.x < -1.97) || (move.y > -2.21 && move.y < -0.66 && move.x > 4.28) || (move.y > 0.791 && move.y < 2.3 && move.x < -1.97) || (move.y > 0.791 && move.y < 2.3 && move.x > 4.28)) // Holes on Side
+        if ((move.y > -2.21 && move.y < -0.66 && move.x < -1.97) || (move.y > -2.21 && move.y < -0.66 && move.x > 4.28) || (move.y > 0.791 && move.y < 2.47 && move.x < -1.97) || (move.y > 0.791 && move.y < 2.3 && move.x > 4.28)) // Holes on Side
         {
             return true;
         }
-        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.35 && move.x < -1.04) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.35 && move.x < 0.32) || (move.y > 0.47 && move.y < 3.55 && move.x > 3.2 && move.x < 3.54) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.9 && move.x < 3.54)) // Top Side T
+        if ((move.y > 0.47 && move.y < 3.55 && move.x > -1.64 && move.x < -1.04) || (move.y > 1.6 && move.y < 2.48 && move.x > -1.64 && move.x < 0.32) || (move.y > 0.47 && move.y < 3.55 && move.x > 3.2 && move.x < 3.54) || (move.y > 1.6 && move.y < 2.48 && move.x > 1.9 && move.x < 3.54)) // Top Side T
         {
             return true;
         }
@@ -148,7 +189,7 @@ public class PacStudentController : MonoBehaviour
         {
             return true;
         }
-        if (move.y > 5.45 || move.x > 6.31 || move.y < -5.59 || move.x < -4.04) // Boundary
+        if (move.y > 5.45 || move.x > 6.31 || move.y < -5.59 || move.x < -3.77) // Boundary
         {
             return true;
         }
