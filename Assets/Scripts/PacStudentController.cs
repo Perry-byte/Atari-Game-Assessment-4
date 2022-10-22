@@ -35,6 +35,7 @@ public class PacStudentController : MonoBehaviour
                     moveMusic.Play();
                     moveMusic.loop = true;
                 }
+                gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
                 tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
         }
@@ -53,6 +54,7 @@ public class PacStudentController : MonoBehaviour
                     moveMusic.Play();
                     moveMusic.loop = true;
                 }
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
         }
@@ -71,6 +73,7 @@ public class PacStudentController : MonoBehaviour
                     moveMusic.Play();
                     moveMusic.loop = true;
                 }
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
                 tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
         }
@@ -89,6 +92,7 @@ public class PacStudentController : MonoBehaviour
                     moveMusic.Play();
                     moveMusic.loop = true;
                 }
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 270);
                 tweener.AddTween(gameObject.transform, gameObject.transform.position, gameObject.transform.position + lastInput, 0.5f);
             }
         }
